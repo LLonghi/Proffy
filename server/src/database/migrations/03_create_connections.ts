@@ -4,7 +4,7 @@ export async function up(Knex: Knex) {
   return Knex.schema.createTable("connections", (table) => {
     table.increments("id").primary();
 
-    table.timestamp("created_at").defaultTo("now()").notNullable();
+    table.timestamp("created_at").defaultTo(Knex.raw("CURRENT_TIMESTAMP")).notNullable();
 
     table
       .integer("user_id")
