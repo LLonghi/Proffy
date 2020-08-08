@@ -10,6 +10,10 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: "center",
   },
+
+  teacherList: {
+    marginTop: -60
+  }
 });
 
 export default styles;

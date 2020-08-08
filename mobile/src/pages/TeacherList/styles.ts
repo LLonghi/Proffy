@@ -11,7 +11,9 @@ const styles = StyleSheet.create({
     justifyContent: "center",
   },
 
-
+  teacherList: {
+    marginTop: -60
+  },
 });
 
 export default styles;
