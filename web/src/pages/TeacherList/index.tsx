@@ -9,11 +9,11 @@ import './styles.css';
 import api from '../../services/api';
 
 function TeacherList() {
+    const [teachers, setTeachers] = useState([]);
+
     const [subject, setSubject] = useState('');
     const [week_day, setWeek_day] = useState('');
     const [time, setTime] = useState('');
-
-    const [teachers, setTeachers] = useState([])
 
     async function searchTeachers(e: FormEvent) {
         e.preventDefault();

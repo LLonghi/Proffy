@@ -1,4 +1,4 @@
-import React from "react";
+import React, { ReactNode } from "react";
 import { View, Image, Text, Button, TouchableOpacity } from "react-native";
 import styles from "./styles";
 import { useNavigation } from '@react-navigation/native'
@@ -9,9 +9,10 @@ import backIcon from "../../assets/images/icons/back.png";
 
 interface PageHeaderPros {
     title: string;
+    headerRight?: ReactNode;
 }
 
-const PageHeader: React.FC<PageHeaderPros> = ({ title }) => {
+const PageHeader: React.FC<PageHeaderPros> = ({ title, headerRight, children }) => {
     const { navigate } = useNavigation();
 
     function handleGoBack() {
@@ -27,8 +28,13 @@ const PageHeader: React.FC<PageHeaderPros> = ({ title }) => {
 
                 <Image source={logoImage} resizeMode="contain" />
             </View>
-            <Text style={styles.title}>{title}</Text>
-            {/* <Text style={styles.title}>Proffys disponiveis</Text> */}
+            <View style={styles.header}>
+                <Text style={styles.title}>{title}</Text>
+                {headerRight}
+            </View>
+
+
+            {children}
         </View>
     );
 }
