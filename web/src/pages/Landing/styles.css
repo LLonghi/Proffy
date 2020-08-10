@@ -88,15 +88,32 @@
 }
 
 @media (min-width:1100px) {
+    #page-landing {
+        display: grid;
+        grid-template-rows: 1fr 200px;
+        grid-template-columns: 1fr;
+        grid-template-areas: "content"
+            "action-bar";
+    }
+
     #page-landing-content {
         max-width: 1100px;
-
         display: grid;
-        grid-template-rows: 350px 1fr;
-        grid-template-columns: 2fr 1fr 1fr;
-        grid-template-areas: 
-        "logo hero hero"
-        "buttons buttons total";
+        grid-area: content;
+        grid-template-rows: 20px 1fr;
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas: "user-area"
+            "logo hero";
+    }
+
+    #page-landing-action-bar {
+        grid-area: action-bar;
+        height: 100%;
+        background: var(--color-background);
+        width: 100vw;
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
 
     .logo-container {
@@ -106,29 +123,38 @@
         margin: 0;
     }
 
-    .logo-container h2{
+    .logo-container h2 {
         text-align: initial;
         font-size: 3.6rem;
     }
 
-    .logo-container img{
+    .logo-container img {
         height: 100%;
     }
-    
-    .hero-image{
+
+    .hero-image {
         grid-area: hero;
         justify-self: end;
     }
-    
+
     .buttons-container {
         grid-area: buttons;
         justify-self: flex-start;
+
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-column-gap: 16px;
+        column-gap: 16px;
+        position: absolute;
+        bottom: -28px;
     }
-    
-    .buttons-container a{
+
+    .buttons-container a {
         font-size: 2.4rem;
+        height: 8rem;
+        width: 26rem;
     }
-    
+
     .total-connections {
         grid-area: total;
         justify-self: end;

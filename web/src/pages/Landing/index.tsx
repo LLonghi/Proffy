@@ -39,7 +39,21 @@ function Landing() {
                     className="hero-image"
                 />
 
+            </div>
+            <div id="page-landing-action-bar">
+
+
                 <div className="buttons-container">
+                    <span className="total-connections">
+                        Seja bem-vindo,
+                        <br />
+                        <strong>O que deseja fazer?</strong>
+                    </span>
+
+                    <span className="total-connections">
+                        Total de {totalConnections} conexões já realizadas <img src={purpleHeartIcon} alt="" />
+                    </span>
+
                     <Link to="/study" className="study">
                         <img src={studyIcon} alt="Estudar" />
                         Estudar
@@ -50,10 +64,6 @@ function Landing() {
                         Dar Aula
                     </Link>
                 </div>
-
-                <span className="total-connections">
-                    Total de {totalConnections} conexões já realizadas <img src={purpleHeartIcon} alt="" />
-                </span>
             </div>
         </div>
     )
